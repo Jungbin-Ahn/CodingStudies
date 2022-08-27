@@ -1,0 +1,179 @@
+body{
+    font-size: 30pt;
+}
+
+/* Gridbox */
+.wrapper1{
+    display: grid;
+     /* grid-template-columns/rows 행/열의 간격 지정. repeat(n, x)활용 가능 */
+    grid-template-columns: 20px 55px 89px;
+    grid-template-rows: 100px 50px;
+    /* (coulmn/row-)gap: 행/열간 간격 */
+    gap: 10px; 
+}
+.box1 {
+    align-items: center;
+    background-color: black;
+    display: flex;    
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper2{
+    display: grid;
+    /* 행/열 갯수 정의 */
+    grid-template-columns: repeat(4, 100px); 
+    grid-template-rows: 50px repeat(3, 100px);
+    /* 어느 영역에 어느 item 들어갈지 배치. grid-area on each class*/
+    grid-template-areas: 
+    "header1 header1 header1 header1"
+    "content1 content1 . nav1"
+    "content1 content1 . nav1"
+    "footer1 footer1 footer1 footer1"    ;
+}
+.header1 {
+    background-color: aqua;
+    grid-area: header1;
+}
+
+.nav1{
+    background-color: green;
+    grid-area: nav1;
+
+}
+.content1 {
+    background-color: orange;
+    grid-area: content1;
+
+}
+.footer1 {
+    background-color: red;
+    grid-area: footer1;
+}
+
+.wrapper3{
+    display: grid;
+    /* 행/열 갯수 정의 */
+    grid-template-columns: repeat(4, 100px); 
+    grid-template-rows: repeat(4, 100px);
+    margin-top: 10px;
+}
+/* 차지하는 영역 지정하는 법 */
+.header2 {
+    background-color: aqua;
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+}
+.nav2{
+    background-color: green;
+    grid-column: 1/3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.content2 {
+    background-color: orange;
+    grid-column-start: 4;
+    grid-row: 2 / 4;
+}
+.footer2 {
+    background-color: red;
+    grid-column: span 3;
+}
+
+.wrapper4{
+    display: grid;
+    /* 행/열 갯수 정의 */
+    gap: 5px;
+    height: 50vh; /* fr 지정시 height 지정*/
+    grid-template: /* repeat function doesn't work on grid template */
+      "header header header header" 1fr /* how height it is*/
+      "content content content nav" 2fr /* how height it is*/
+      "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr; /* how height it is and how wide it is */
+}
+.header3 {
+    background-color: aqua;
+    grid-area: header;    
+}
+
+.nav3{
+    background-color: green;
+    grid-area: nav;
+}
+.content3 {
+    background-color: orange;
+    grid-area: content;
+}
+.footer3 {
+    background-color: red;
+    grid-area: footer;
+}
+
+.wrapper5{
+    display: grid;
+    /* 행/열 갯수 정의 */
+    gap: 5px;
+    height: 50vh; 
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+    justify-items: center; /* grid 1개 안의 item의 main-axis상의 위치 설정*/
+    align-items: center; /* grid 1개 안의  item의 cross-axis상의 위치 설정*/
+    /* place-items: center center; 와 동일*/
+    /* place-content는 grid전체가 어디 위치하는지 설정*/
+}
+.header4 {
+    background-color: aqua;
+    height: 40px;
+    width: 40px;
+}
+.nav4{
+    background-color: green;
+}
+.content4 {
+    background-color: orange;
+}
+.footer4 {
+    background-color: red;
+}
+
+/* auto columns and rows */
+.grid {
+    color: white;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(5, minmax(100px, 150px));
+    grid-template-rows: repeat(5, 100px);
+    grid-auto-flow: column; /*그리드 정렬 방향*/
+    grid-auto-columns: 200px; /* 넘치는 grid에 대한 크기 지정*/
+}
+
+.item:nth-child(odd) {
+    background-color: #2ecc71;
+}
+
+.item:nth-child(even) {
+    background-color: #3498db;
+}
+.grid2 {
+    color: white;
+    display: grid;
+    gap: 5px;
+    grid-auto-rows: 100px; 
+    margin-bottom: 30px;
+}
+.grid2:first-child {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* 크기 고정 / 갯수 늘림 */
+}
+.grid2:last-child {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 갯수 고정 / 크기 늘림 */
+}
+.grid3 {
+    color: white;
+    display: grid;
+    gap: 5px;
+    grid-auto-rows: 100px; 
+    margin-bottom: 30px;
+    grid-template-columns: min-content max-content;
+
+}

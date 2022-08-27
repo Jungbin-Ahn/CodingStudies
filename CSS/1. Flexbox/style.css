@@ -1,0 +1,91 @@
+body{
+    font-size: 30pt;
+}
+.box1 {
+    background: blue;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    color: white;
+}
+
+   /*box class의 n번째 item. 괄호 안에 어느 수식이든 들어갈 수 있음, even/odd also. */
+.box1:nth-child(2) {
+    margin-left: 35px;
+}
+
+.box1:nth-child(3) {
+    margin-left: 20px;
+}
+
+/* Flexbox */
+.wrapper1{
+    display: flex;
+    flex-direction: row; /*Decide main-axis. Row/Column. Could give reverse order*/
+
+    /* justify-content: Main-axis 정렬 방법*/
+    /* align-items: Cross-axis 정렬 방법*/
+    justify-content: space-around;
+    align-items: auto;
+    height: 50vh;
+}
+.box2 {
+    background: peru;
+    width: 100px;
+    height: 100px;
+    color: white;
+}
+/* align/justify-self: 단독으로 정렬방법 지정*/
+/* order: 순서 manual로 지정, 0 as default*/
+
+.box2:nth-child(even){
+    align-self: center;
+    
+}
+.box2:nth-child(3){
+    align-self: flex-end;
+}
+
+.box2:nth-child(5){
+    order:-1;
+}
+.wrapper2{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    align-content: space-around; /* Cross-axis 간격 */
+    flex-wrap: wrap; /* Whether we respect the size of content */
+}
+.box3{
+    display: flex; /*안에 있는 컨텐즈의 display 방법*/
+    background: grey;
+    width: 200px;
+    height: 200px;
+    color: white;
+    justify-content:center;
+    align-items: center;
+}
+
+.wrapper3{
+    display: flex;
+    justify-content: space-around;
+    width: 50vw;
+}
+.box4{
+    display: flex; /*안에 있는 컨텐즈의 display 방법*/
+    background: black;
+    flex-basis: 30%; /* Main-axis contents의 기본 너비 */
+    height: 200px;
+    color: white;
+    justify-content:center;
+    align-items: center;
+    
+}
+.box4:nth-child(1){
+    flex-grow: 3; /* 화면이 늘어날 때 늘어나는 비율 */
+}
+.box4:nth-child(2){
+    background-color: brown;
+    flex-shrink: 2; /* 화면이 늘어날 때 줄어드는 비율 */
+}
+
