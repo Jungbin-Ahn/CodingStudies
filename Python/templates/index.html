@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/reset.css">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Job Scraper</title>
 </head>
 <body>
-    <div class="main">
-        <video muted autoplay loop>
-            <source src="../static/source/video.mp4" type="video/mp4">
-        </video>
-        <div class="textbox">
-            <h1>sojwoeafi</h1>
-        </div>
+  <video autoplay muted loop>
+    <source src="../static/source/video.mp4" type="video/mp4">
+  </video>
+  <div class= "background">
+  <div class = "container">
+    <div class = "title">
+      <h1>Find Jobs</h1>
+    </div>
+    <div class = "links">
+      <span>Link To: </span>
+      <a href="https://remoteok.com/">RemoteOK</a>
+      <span> | </span>
+      <a href="https://weworkremotely.com/">WWR</a>
+    </div>
+    <div class = "search">
+      <form action="/search">
+        <input type = "text" name = "keyword" placeholder = "Write keyword please"/>
+        <button>Search</button>
+      </form>
+    </div>  
+    </div>
     </div>
 </body>
 </html>

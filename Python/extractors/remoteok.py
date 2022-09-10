@@ -26,7 +26,6 @@ def extract_remoteok_jobs(term):
                 'location': location,
                 'link': 'https://remoteok.com/' + link
             }
-
             result.append(job_data)
     else:
         print("Can't get jobs.")

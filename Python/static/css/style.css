@@ -1,32 +1,115 @@
 body{
-    padding: 0px;
-    margin: 0px;
-}
-.main{
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0px auto;
-    position: relative;
-}
-video{
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-}
-.textbox{
+    background-color: white;
+  }
+  video{
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+  }
+  .background{
     display: flex;
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    top: 25%;
-    left: 25%;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 7px;
-    border: 1px solid black;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    align-items: center; 
+    justify-content: center;
+  }
+  .container{
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 50vw;
+    background-color: rgba(0,0,0,.7);
+    border-radius: 2.25rem;
     justify-content: center;
     align-items: center;
-}
-::-webkit-scrollbar{
-    display: none;
-}
+    border: 3px solid white;
+  }
+  h1{
+    --typography-spacing-vertical: 1rem;
+    color: white;
+  }
+  .links{
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  span{
+    color: white;
+  }
+  .search{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header{
+    top:0px;
+    left:0px;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 75px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(150,150,150,.7);
+  }
+  form{
+    display: flex;
+  }
+  input{
+    width: 200px;
+    height: 30px;
+    margin-right:5px;
+    border: 1px solid white;
+    color: white;
+    background-color: rgba(0,0,0,0);
+  }
+  input::placeholder{
+    color:white;
+    font-weight: 400;
+  }
+  button{
+    width: 110px;
+    background: black;
+    color: white;
+    border: 1px solid white;
+  }
+  button:hover{
+    cursor: pointer;
+  }
+  #export{
+    height: 34px;
+  }
+  .table{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 3%;
+    height: 83%;
+    width: 80%;
+    overflow-y: scroll;
+    background-color: rgba(255,255,255,.7);
+    border-radius: 2.25rem;
+    border: 2px solid black;
+  }
+  table{
+    width: 100%;
+    padding: 15px;
+  }
+  th{
+    border-bottom: 3px double;
+    font-size: 25px;
+  }
+  ::-webkit-scrollbar {
+      display: none;
+  }
